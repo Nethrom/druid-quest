@@ -10,7 +10,7 @@ export default class App extends React.Component {
     );
   }
 }
-change
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
