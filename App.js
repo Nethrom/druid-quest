@@ -11,10 +11,10 @@ import {
 
 export default class App extends React.Component{
   state = {
-    swtichValue: false
+    switchValue: false
   }
   switchChange = () => {
-    this.setState({swtichValue: !this.state.swtichValue});
+    this.setState({switchValue: !this.state.switchValue});
   }
   startGame = () => {
     console.log('Start button pressed')
@@ -30,7 +30,7 @@ export default class App extends React.Component{
         onPress={this.startGame}
         />
         
-        <Switch onValueChange={this.switchChange} value={this.state.swtichValue} />
+        <Switch onValueChange={this.switchChange} value={this.state.switchValue} />
       
       </View>
     )
