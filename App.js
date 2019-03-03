@@ -7,10 +7,14 @@ import {
   Button,
   Switch,
 } from 'react-native';
+import { createStackNavigator, createAppContainer } from "react-navigation";
+
+import MenuScreen from "./screens/MenuScreen";
+import GameScreen from "./screens/GameScreen";
 
 
 export default class App extends React.Component{
-  state = {
+  /* state = {
     switchValue: false
   }
   switchChange = () => {
@@ -18,26 +22,43 @@ export default class App extends React.Component{
   }
   startGame = () => {
     console.log('Start button pressed')
-  }
+  } */
+
   render () {
     return (
+      
       <View style={styles.container}>
         <ImageBackground source={require ('./assets/ForestBG.jpg')} style={styles.bg} >
         </ImageBackground>
- 
-        <Button
+
+        <AppStackNavigator />
+        <App />
+        
+
+       <Button
         title="Start"
         onPress={this.startGame}
         />
-        
-        <Switch onValueChange={this.switchChange} value={this.state.switchValue} />
-      
+
+       {/* <Switch onValueChange={this.switchChange} value={this.state.switchValue} /> 
+ */}
       </View>
-    )
+    );
+
   }
-  
 
 }
+
+const AppStackNavigator = createStackNavigator({
+  Menu: MenuScreen,
+  Game: GameScreen
+  });
+  const App = createAppContainer(); 
+
+ 
+
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
