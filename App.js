@@ -89,7 +89,7 @@ export default class App extends React.Component{
 }
 
 
-export default createAppContainer(AppNavigator);
+
 
 
 const styles = StyleSheet.create({
