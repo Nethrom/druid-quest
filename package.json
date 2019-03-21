@@ -15,5 +15,18 @@
   "devDependencies": {
     "babel-preset-expo": "^5.0.0"
   },
-  "private": true
+  "private": true,
+  "name": "druid-quest",
+  "description": "",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nethrom/druid-quest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nethrom/druid-quest/issues"
+  },
+  "homepage": "https://github.com/Nethrom/druid-quest#readme"
 }
