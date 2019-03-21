@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
   StyleSheet,
   Text,
@@ -6,92 +6,71 @@ import {
   View, 
   Button,
   Switch,
-} from 'react-native';
-import { createStackNavigator, createAppContainer } from "react-navigation";
+ } from 'react-native';
+import { createAppContainer, createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
 
-class HomeScreen extends React.Component{
-  /* state = {
-    switchValue: false
-  }
-  switchChange = () => {
-    this.setState({switchValue: !this.state.switchValue});
-  }
-  startGame = () => {
-    console.log('Start button pressed')
-  } */
-
-  render () {
+class HomeScreen extends React.Component {
+  render() {
     return (
-      
-      <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Home Screen</Text>
-        <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
-          />
         <ImageBackground source={require ('./assets/ForestBG.jpg')} style={styles.bg} >
         </ImageBackground>
-
-       {/*  <Button
-        title="Start"
-        onPress={this.startGame}
-        /> */}
+         <Button
+          title="Go to Details"
+          onPress={() => this.props.navigation.navigate('Details')}
+        />
         
-       {/*  <Switch onValueChange={this.switchChange} value={this.state.switchValue} /> */}
-      
+       
+
       </View>
     );
-
   }
-
 }
+
 class DetailsScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex:1, alignItems: "center", justifyContent: "center"}}>
-    <Text>Details Screen</Text>
-    <Button
-    title="Go to Details.... again"
-    onPress={() => this.props.navigation.push('Details')}
-    />
-    <Button
-    title="Go to Home"
-    onPress={() => this.props.navigation.navigate('Home')}
-    />
-    <Button
-    title="Go Back"
-    onPress={() => this.props.navigation.goBack()}
-    />
-  </View>
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Details Screen</Text>
+        <Button
+          title="Go to Details... again"
+          onPress={() => this.props.navigation.push('Details')}
+        />
+        <Button
+          title="Go to Home"
+          onPress={() => this.props.navigation.navigate('Home')}
+        />
+        <Button
+          title="Go back"
+          onPress={() => this.props.navigation.goBack()}
+        />
+      </View>
     );
   }
 }
-const AppNavigator = createStackNavigator(
-  {
-  Home: {
-    screen: HomeScreen,
-  },
-  Details: {
 
-   screen: DetailsScreen,
-  },
-},
+const RootStack = createStackNavigator(
   {
-    initialRouteName: "Home"
+    Home: {
+      screen: HomeScreen,
+    },
+    Details: {
+      screen: DetailsScreen,
+    },
+  },
+  {
+    initialRouteName: 'Home',
   }
-  );
-const AppContainer = createAppContainer(AppNavigator);
+);
 
-export default class App extends React.Component{
-  render(){
-    return <AppContainer />; 
+const AppContainer = createAppContainer(RootStack);
+
+export default class App extends React.Component {
+  render() {
+    return <AppContainer />;
   }
 }
-
-
-
-
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
