@@ -27,12 +27,7 @@ class MenuScreen extends React.Component {
           title="Start"
           onPress={() => this.props.navigation.navigate('Game')}
         />
-        state = {
-    switchValue: false
-         }
-    switchChange = () => {
-    this.setState({switchValue: !this.state.switchValue});
-  }
+       <Switch onValueChange={this.switchChange} value={this.state.switchValue} /> 
 
         <Button
         title="Leader Board"
