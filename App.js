@@ -9,7 +9,7 @@ import {
  } from 'react-native';
 import { createAppContainer, createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
 
-class HomeScreen extends React.Component {
+class MenuScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -17,50 +17,60 @@ class HomeScreen extends React.Component {
         <ImageBackground source={require ('./assets/ForestBG.jpg')} style={styles.bg} >
         </ImageBackground>
          <Button
-          title="Go to Details"
-          onPress={() => this.props.navigation.navigate('Details')}
+          title="Start"
+          onPress={() => this.props.navigation.navigate('Game')}
         />
-        
-       
-
-      </View>
+        <Button
+        title="Leader Board"
+        onPress={() => this.props.navigation.navigate('LeaderBoard')}
+        />
+       </View>
     );
   }
 }
 
-class DetailsScreen extends React.Component {
+class GameScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Details Screen</Text>
+        <Text>Game Screen</Text>
         <Button
-          title="Go to Details... again"
-          onPress={() => this.props.navigation.push('Details')}
-        />
-        <Button
-          title="Go to Home"
-          onPress={() => this.props.navigation.navigate('Home')}
-        />
-        <Button
-          title="Go back"
-          onPress={() => this.props.navigation.goBack()}
+          title="Menu"
+          onPress={() => this.props.navigation.navigate('Menu')}
         />
       </View>
     );
   }
 }
+class LeaderBoardScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex: 1 , alignItems: 'center' , justifyContent: 'center' }}>
+      <Text>Leader Board</Text>
+      <Button
+      title="Menu"
+      onPress={() => this.props.navigation.navigate('Menu')}
+      />
+      </View>
+    );
+  }
+}
+
 
 const RootStack = createStackNavigator(
   {
-    Home: {
-      screen: HomeScreen,
+    Menu: {
+      screen: MenuScreen,
     },
-    Details: {
-      screen: DetailsScreen,
+    Game: {
+      screen: GameScreen,
+    },
+    LeaderBoard: {
+      screen: LeaderBoardScreen
     },
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Menu',
   }
 );
 
