@@ -10,6 +10,13 @@ import {
 import { createAppContainer, createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
 
 class MenuScreen extends React.Component {
+  state = {
+    switchValue: false
+  }
+  switchChange = () => {
+    this.setState({switchValue: !this.state.switchValue});
+  }
+
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -20,6 +27,13 @@ class MenuScreen extends React.Component {
           title="Start"
           onPress={() => this.props.navigation.navigate('Game')}
         />
+        state = {
+    switchValue: false
+         }
+    switchChange = () => {
+    this.setState({switchValue: !this.state.switchValue});
+  }
+
         <Button
         title="Leader Board"
         onPress={() => this.props.navigation.navigate('LeaderBoard')}
