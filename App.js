@@ -27,7 +27,8 @@ class MenuScreen extends React.Component {
           title="Start"
           onPress={() => this.props.navigation.navigate('Game')}
         />
-       <Switch onValueChange={this.switchChange} value={this.state.switchValue} /> 
+       <Switch onValueChange={this.switchChange} value={this.state.switchValue} />
+       <Text>{this.state.switchValue ? 'Music On' : 'Music Off'}</Text>
 
         <Button
         title="Leader Board"
@@ -47,7 +48,7 @@ class GameScreen extends React.Component {
           title="Menu"
           onPress={() => this.props.navigation.navigate('Menu')}
         />
-      </View>
+      </View> 
     );
   }
 }
