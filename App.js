@@ -26,7 +26,7 @@ class HomeScreen extends React.Component{
       <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
         <Text>Home Screen</Text>
         <Button
-          title="Go to Details"
+          title="Home Screen"
           onPress={() => this.props.navigation.navigate('Details')}
           />
         <ImageBackground source={require ('./assets/ForestBG.jpg')} style={styles.bg} >
@@ -66,7 +66,7 @@ class DetailsScreen extends React.Component {
     );
   }
 }
-const AppNavigator = createStackNavigator(
+const RootStack = createStackNavigator(
   {
   Home: {
     screen: HomeScreen,
@@ -77,20 +77,16 @@ const AppNavigator = createStackNavigator(
   },
 },
   {
-    initialRouteName: "Home"
+    initialRouteName: 'Home'
   }
   );
-const AppContainer = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(RootStack);
 
 export default class App extends React.Component{
   render(){
     return <AppContainer />; 
   }
 }
-
-
-export default createAppContainer(AppNavigator);
-
 
 const styles = StyleSheet.create({
   container: {
