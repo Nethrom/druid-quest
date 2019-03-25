@@ -9,12 +9,7 @@ import {
 } from 'react-native';
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
-
-
-import MenuScreen from "./screens/MenuScreen";
-
-
-export default class App extends React.Component{
+class HomeScreen extends React.Component{
   /* state = {
     switchValue: false
   }
@@ -28,10 +23,15 @@ export default class App extends React.Component{
   render () {
     return (
       
-      <View style={styles.container}>
+      <View style={{flex: 1, alignItems: "center", justifyContent: "center"}}>
+        <Text>Home Screen</Text>
+        <Button
+          title="Home Screen"
+          onPress={() => this.props.navigation.navigate('Details')}
+          />
         <ImageBackground source={require ('./assets/ForestBG.jpg')} style={styles.bg} >
         </ImageBackground>
-        <AppStackNavigator/>
+
        {/*  <Button
         title="Start"
         onPress={this.startGame}
@@ -45,12 +45,48 @@ export default class App extends React.Component{
   }
 
 }
+class DetailsScreen extends React.Component {
+  render() {
+    return (
+      <View style={{ flex:1, alignItems: "center", justifyContent: "center"}}>
+    <Text>Details Screen</Text>
+    <Button
+    title="Go to Details.... again"
+    onPress={() => this.props.navigation.push('Details')}
+    />
+    <Button
+    title="Go to Home"
+    onPress={() => this.props.navigation.navigate('Home')}
+    />
+    <Button
+    title="Go Back"
+    onPress={() => this.props.navigation.goBack()}
+    />
+  </View>
+    );
+  }
+}
+const RootStack = createStackNavigator(
+  {
+  Home: {
+    screen: HomeScreen,
+  },
+  Details: {
 
-const AppStackNavigator = createStackNavigator({
-  Menu: MenuScreen
-  });
+   screen: DetailsScreen,
+  },
+},
+  {
+    initialRouteName: 'Home'
+  }
+  );
+const AppContainer = createAppContainer(RootStack);
 
-
+export default class App extends React.Component{
+  render(){
+    return <AppContainer />; 
+  }
+}
 
 const styles = StyleSheet.create({
   container: {
