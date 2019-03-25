@@ -1,5 +1,5 @@
 import React from 'react';
-import { createAppContainer, createStackNavigator } from 'react-navigation'; // Version can be specified in package.json
+import { createAppContainer, createStackNavigator } from 'react-navigation'; 
 
 import MenuScreen from './src/components/MenuScreen';
 import GameScreen from './src/components/GameScreen';

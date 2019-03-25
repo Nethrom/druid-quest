@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ImageBackground } from 'react-native'
 
 export default class MenuScreen extends React.Component {
     state = {
