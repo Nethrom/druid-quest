@@ -1,4 +1,5 @@
-import { StyleSheet, ImageBackground } from 'react-native'
+import { StyleSheet } from 'react-native'
+
 
 export default class MenuScreen extends React.Component {
     state = {
@@ -12,7 +13,7 @@ export default class MenuScreen extends React.Component {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <Text>Home Screen</Text>
-          <ImageBackground source={require ('./assets/ForestBG.jpg')} style={styles.bg} >
+          <ImageBackground source={require ('./assets/ForestBG.jpg')} style={styles.bg}>
           </ImageBackground>
            <Button
             title="Start"

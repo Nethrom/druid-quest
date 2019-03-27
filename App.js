@@ -5,6 +5,7 @@ import MenuScreen from './src/components/MenuScreen';
 import GameScreen from './src/components/GameScreen';
 import LeaderBoardScreen from './src/components/LeaderBoardScreen';
 
+
 const RootStack = createStackNavigator(
   {
     Menu: {
