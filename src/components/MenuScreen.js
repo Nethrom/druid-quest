@@ -1,4 +1,6 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, ImageBackground, View, Switch, Text, Button } from 'react-native'
+import React from 'react'; 
+
 
 
 export default class MenuScreen extends React.Component {
@@ -8,12 +10,16 @@ export default class MenuScreen extends React.Component {
     switchChange = () => {
       this.setState({switchValue: !this.state.switchValue});
     }
+    onPress = () => {
+      this.setState({
+        count: this.state.count+1
+      })
+    }
   
     render() {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Text>Home Screen</Text>
-          <ImageBackground source={require ('./assets/ForestBG.jpg')} style={styles.bg}>
+          <ImageBackground source={require ('../../assets/ForestBG.jpg')} style={styles.bg}>
           </ImageBackground>
            <Button
             title="Start"
@@ -21,8 +27,7 @@ export default class MenuScreen extends React.Component {
           />
          <Switch onValueChange={this.switchChange} value={this.state.switchValue} />
          <Text>{this.state.switchValue ? 'Music On' : 'Music Off'}</Text>
-  
-          <Button
+         <Button
           title="Leader Board"
           onPress={() => this.props.navigation.navigate('LeaderBoard')}
           />
