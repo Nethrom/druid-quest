@@ -10,12 +10,8 @@ export default class MenuScreen extends React.Component {
     switchChange = () => {
       this.setState({switchValue: !this.state.switchValue});
     }
-    onPress = () => {
-      this.setState({
-        count: this.state.count+1
-      })
-    }
-  
+    
+    
     render() {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
