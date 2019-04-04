@@ -10,13 +10,15 @@ export default class MonsterView extends React.Component {
     render() {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Image source={require('../../../assets/Raccoon.jpg')} />
+        <Image source={require('../../../assets/Squirrel.jpg')} />
         <TouchableOpacity
         //onPress is not defined yet.
           onPress={this.onPress}>  
           <Image
           resizeMode='contain'
           source={require('../../../assets/bunny.gif')}
-          style={StyleSheet.imageStyle}
+          //style={StyleSheet.imageStyle}
           />
           </TouchableOpacity>  
          </View>
