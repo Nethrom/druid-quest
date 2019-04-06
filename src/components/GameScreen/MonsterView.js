@@ -6,7 +6,7 @@ export default class MonsterView extends React.Component {
     // pass in monster power/type/etc based on character data from props
     //const animalImages = [10];
     //animalImages[0] = loadImage? 
-   
+ 
     render() {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

@@ -10,7 +10,7 @@ export default class MenuScreen extends React.Component {
     switchChange = () => {
       this.setState({switchValue: !this.state.switchValue});
     }
-    
+ 
     
     render() {
       return (
