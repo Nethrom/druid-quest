@@ -3,7 +3,7 @@ import { View,Text,Button } from 'react-native';
 import Character from '../../models/Character';
 
 
-import MonsterView from './MonsterView';
+import CombatView from './CombatView';
 
 export default function GameScreen(props) {
     return (
@@ -14,7 +14,7 @@ export default function GameScreen(props) {
             title="Menu"
             onPress={() => props.navigation.navigate('Menu')}
           />
-          <MonsterView character={Character} />
+          <CombatView character={Character} />
         </View>
     )
 }
