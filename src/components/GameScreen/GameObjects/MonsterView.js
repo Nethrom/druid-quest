@@ -16,12 +16,12 @@ export default class Monster extends React.Component {
 			<TouchableWithoutFeedback onPress={this.onMonsterTap}>  
 				<Image
 					resizeMode='contain'
-					source={require('../../../assets/bunny.gif')}
+					source={require('../../../../assets/bunny.gif')}
 					style={StyleSheet.imageStyle}
 				/>
 				{this.props.monster.isCorrupt && 
 					<Image
-						source={require('../../../assets/corrupted.gif')}
+						source={require('../../../../assets/corrupted.gif')}
 						style={StyleSheet.corruptStyle}
 					/>
 				}
