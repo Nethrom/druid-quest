@@ -19,22 +19,26 @@ export default class CombatView extends React.Component {
       const monsterCount = level * 2;
       if (monsterCount > MAX_MONSTER_COUNT) monsterCount = MAX_MONSTER_COUNT;
 
+
+
       const monsters = [];
       for (let x = 0; x < monsterCount; x++) {
         monsters.push(new Monster({ hitpoints: level * 2 }))
       }
-
-      this.setState({ monsters });
-    }
-
+      
+      this.setState({ monsters });    
+       
+    }    
+       
     render() {
       const { monsters } = this.state;
+        
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           {
-            monsters.map((monster, index) => (
-              <MonsterView key={index} monster={monster} />
-            ))
+              monsters.map((monster, index) => (
+             <MonsterView key={index} monster={monster} />
+              ))
           }
         </View>
       );

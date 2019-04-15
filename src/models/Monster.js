@@ -1,6 +1,6 @@
 
 export default class Monster {
-    constructor(stats, name = 'Cursed Animal') {
+    constructor(stats, name = 'Corrupt Animal') {
         this.stats = stats;
         this.name = name;
         this.isCorrupt = true;
