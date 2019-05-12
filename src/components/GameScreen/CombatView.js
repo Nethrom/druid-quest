@@ -10,7 +10,10 @@ export default class CombatView extends React.Component {
     // add monsters here as sub components 
     // pass in monster power/type/etc based on character data from props
     //const animalImages = [10];
-    //animalImages[0] = loadImage? 
+    //animalImages[0] = loadImage?
+    state = {
+      monsters: [],
+    }
 
     componentDidMount() {
       const { character } = this.props;
@@ -27,7 +30,6 @@ export default class CombatView extends React.Component {
       }
       
       this.setState({ monsters });    
-       
     }    
        
     render() {
