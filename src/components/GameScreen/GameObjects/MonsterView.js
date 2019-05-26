@@ -3,13 +3,38 @@ import { StyleSheet, TouchableOpacity, Image, View } from 'react-native';
 
 import Character from '../../../models/Character';
 
-export default class Monster extends React.Component {
+const Monster = (props) => {
+	onMonsterTap (props) {
+		if(props.monster) return;
+
+		const { monster } = props;
+
+		monster.takeDamage(Character.level * 2);
+	}
+	return(
+		<View>  
+				<TouchableOpacity onPress={this.onMonsterTap.bind(this)}>
+					<Image
+						resizeMode='contain'
+						source={require('../../../../assets/bunny.gif')}
+						style={StyleSheet.imageStyle}
+					/>
+					{this.props.monster.isCorrupt && 
+						<Image
+							source={require('../../../../assets/corrupted.gif')}
+							style={StyleSheet.corruptStyle}
+						/>
+					}
+				</TouchableOpacity>
+			</View> 
+
+	);
+}
+
+/*export default class Monster extends React.Component {
 	constructor(props){
 		super(props)
 	}
-
-
-	
 	onMonsterTap () {
 		if (!this.props.monster) return;
 
@@ -28,7 +53,7 @@ export default class Monster extends React.Component {
 						style={StyleSheet.imageStyle}
 					/>
 					{this.props.monster.isCorrupt && 
-						<Image
+						<Imagen
 							source={require('../../../../assets/corrupted.gif')}
 							style={StyleSheet.corruptStyle}
 						/>
@@ -37,7 +62,7 @@ export default class Monster extends React.Component {
 			</View> 
 		);
 	}
-  }
+  }*/
 
 const styles = StyleSheet.create({
   imageStyle: {

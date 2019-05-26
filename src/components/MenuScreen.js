@@ -3,7 +3,7 @@ import React from 'react';
 
 
 
-export default class MenuScreen extends React.Component {
+export default function MenuScreen() {
     state = {
       switchValue: false
     }
@@ -11,8 +11,6 @@ export default class MenuScreen extends React.Component {
       this.setState({switchValue: !this.state.switchValue});
     }
  
-    
-    render() {
       return (
         <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
           <ImageBackground source={require ('../../assets/ForestBG.jpg')} style={styles.bg}>
@@ -30,7 +28,7 @@ export default class MenuScreen extends React.Component {
          </View>
       );
     }
-  }
+  
 
 const styles = StyleSheet.create({
     container: {
