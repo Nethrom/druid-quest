@@ -1,33 +1,29 @@
-import React from 'react';
-import { createAppContainer, createStackNavigator } from 'react-navigation'; 
+import React from "react";
+import { createAppContainer, createStackNavigator } from "react-navigation";
 
-import MenuScreen from './src/components/MenuScreen';
-import GameScreen from './src/components/GameScreen';
-import LeaderBoardScreen from './src/components/LeaderBoardScreen';
-
-
+import MenuScreen from "./src/components/MenuScreen";
+import GameScreen from "./src/components/GameScreen";
+import LeaderBoardScreen from "./src/components/LeaderBoardScreen";
 
 const RootStack = createStackNavigator(
   {
     Menu: {
-      screen: MenuScreen,
-       },
+      screen: MenuScreen
+    },
     Game: {
-      screen: GameScreen,
+      screen: GameScreen
     },
     LeaderBoard: {
       screen: LeaderBoardScreen
-    },
+    }
   },
   {
-    initialRouteName: 'Menu',
+    initialRouteName: "Menu"
   }
 );
 
 const AppContainer = createAppContainer(RootStack);
 
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
+export default function App() {
+  return <AppContainer />;
 }
