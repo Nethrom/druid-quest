@@ -1,34 +1,33 @@
-import React from 'react';
-import { StyleSheet, TouchableOpacity, Image, View } from 'react-native';
+import React from "react";
+import { StyleSheet, TouchableOpacity, Image, View } from "react-native";
 
-import Character from '../../../models/Character';
+import Character from "../../../models/Character";
 
-const Monster = (props) => {
-	onMonsterTap (props) {
-		if(props.monster) return;
+export default function Monster() {
+  onMonsterTap();
+  if (monster) return;
 
-		const { monster } = props;
+  const { monster } = props;
 
-		monster.takeDamage(Character.level * 2);
-	}
-	return(
-		<View>  
-				<TouchableOpacity onPress={this.onMonsterTap.bind(this)}>
-					<Image
-						resizeMode='contain'
-						source={require('../../../../assets/bunny.gif')}
-						style={StyleSheet.imageStyle}
-					/>
-					{this.props.monster.isCorrupt && 
-						<Image
-							source={require('../../../../assets/corrupted.gif')}
-							style={StyleSheet.corruptStyle}
-						/>
-					}
-				</TouchableOpacity>
-			</View> 
+  monster.takeDamage(Character.level * 2);
 
-	);
+  return (
+    <View>
+      <TouchableOpacity onPress={onMonsterTap()}>
+        <Image
+          resizeMode="contain"
+          source={require("../../../../assets/bunny.gif")}
+          style={StyleSheet.imageStyle}
+        />
+        {monster.isCorrupt && (
+          <Image
+            source={require("../../../../assets/corrupted.gif")}
+            style={StyleSheet.corruptStyle}
+          />
+        )}
+      </TouchableOpacity>
+    </View>
+  );
 }
 
 /*export default class Monster extends React.Component {
@@ -66,14 +65,13 @@ const Monster = (props) => {
 
 const styles = StyleSheet.create({
   imageStyle: {
-		position: 'absolute',
-		top: 0
-	},
-	corruptStyle: {
-		position: 'absolute',
-		top: 0,
-		width: '50%',
-		height: '50%',
-	}
+    position: "absolute",
+    top: 0
+  },
+  corruptStyle: {
+    position: "absolute",
+    top: 0,
+    width: "50%",
+    height: "50%"
+  }
 });
-
